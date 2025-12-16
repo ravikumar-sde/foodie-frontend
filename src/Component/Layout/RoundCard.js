@@ -1,7 +1,7 @@
 import './roundCard.scss';
 import { Link, useLoaderData } from 'react-router-dom';
 
-export default function RoundCard({ data, css, shift }) {
+export default function RoundCard({ data, css }) {
     const { brands } = useLoaderData();
 
     const brand = brands.filter(brand => {
@@ -13,8 +13,8 @@ export default function RoundCard({ data, css, shift }) {
 
     return (
         <div className='round-card-container'>
-            {brand.length 
-            ? <Link to={`/restaurants/${data._id}/online-order`} className='round-card' style={{right: shift}}>
+            {brand.length
+            ? <Link to={`/restaurants/${data._id}/online-order`} className='round-card'>
                 <div className='image-container'>
                     <div className='image' style={{boxShadow: boxShadow}}>
                         <img src={data.image} alt={data.name} style={{width: width }} />
@@ -23,9 +23,9 @@ export default function RoundCard({ data, css, shift }) {
                 <div className='name'>
                     <h6>{data.name}</h6>
                 </div>
-            </Link> 
-            : 
-            <Link to={`/restaurants?query=${data.name}`} className='round-card' style={{right: shift}}>
+            </Link>
+            :
+            <Link to={`/restaurants?query=${data.name}`} className='round-card'>
                 <div className='image-container'>
                     <div className='image' style={{boxShadow: boxShadow}}>
                         <img src={data.image} alt={data.name} style={{width: width }} />

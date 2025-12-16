@@ -10,6 +10,7 @@ import NotFound from '../User/Layout/NotFound';
 import noDishFound from '../../Asset/no-food-found.webp'
 import { fetchData } from '../../Utilities/api';
 import { useCart } from '../../Context/cartProvider';
+import CartPopup from './Cart/CartPopup';
 
 export default function FoodCardList() {
     const [inputValue, setInputValue] = useState('');
@@ -69,6 +70,7 @@ export default function FoodCardList() {
     return (
         <>
             {navigation.state === 'loading' && !navigation.formMethod ? renderLoader : <div className='food-card-list-wrapper'>
+                <CartPopup />
                 <div className='online-order-container'>
                     <div className='online-order-wrapper'>
                         <p className='heading'>Order Online</p>
@@ -84,7 +86,7 @@ export default function FoodCardList() {
                     </form>
                 </div>
                 {dishes.length > 0 ? <div className='food-card-wrapper'>{renderCards}</div> : <NotFound image={noDishFound} description='No items found that match your search/filter.' />}
-            </div>}
+            </div>}s
         </>
     )
 }

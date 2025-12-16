@@ -1,97 +1,185 @@
-@mixin restaurant-text-align {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .rectangle-card-container {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    padding: 1rem;
-    border-radius: 1rem;
-    text-decoration: blink;
-    color: rgb(28, 28, 28);
+    text-decoration: none;
+    color: #1c1c1c;
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.04);
 
     &:hover {
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 5px;
-    }
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+        transform: translateY(-6px);
+        border-color: rgba(102, 126, 234, 0.1);
 
-    .image-container {
-        overflow: hidden;
-        border-radius: 1rem;
-        width: 330px;
-        height: 250px;
+        .image-container {
+            img {
+                transform: scale(1.1);
+            }
 
-        img {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            .rating-badge {
+                transform: scale(1.05);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            }
+        }
+
+        .restaurant-name {
+            color: #ff6b35;
         }
     }
 
-    .description-container {
-        .name-and-rating {
-            @include restaurant-text-align;
+    .image-container {
+        position: relative;
+        width: 100%;
+        height: 220px;
+        overflow: hidden;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 
-            .name {
-                margin-block-end: 0px;
-                font-weight: 500;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .rating-badge {
+            position: absolute;
+            bottom: 12px;
+            left: 12px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            padding: 6px 12px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+
+            .rating-value {
+                font-size: 0.95rem;
+                font-weight: 700;
+                color: #1c1c1c;
+                letter-spacing: 0.3px;
+            }
+
+            .star-icon {
+                font-size: 1.1rem;
+                color: #fbbf24;
+                font-variation-settings: 'FILL' 1;
+            }
+        }
+    }
+
+    .card-content {
+        padding: 16px 18px 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        .restaurant-header {
+            .restaurant-name {
                 font-size: 1.25rem;
-                max-width: 80%;
-                color: rgb(28, 28, 28);
+                font-weight: 600;
+                line-height: 1.4;
+                color: #1c1c1c;
+                margin: 0;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                letter-spacing: -0.02em;
+                transition: color 0.3s ease;
+            }
+        }
+
+        .restaurant-info {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            .cuisine-type {
+                font-size: 0.95rem;
+                font-weight: 400;
+                color: #6b7280;
+                line-height: 1.5;
+                margin: 0;
                 overflow: hidden;
                 text-overflow: ellipsis;
                 white-space: nowrap;
             }
 
-            .rating {
+            .price-info {
                 display: flex;
-                align-items: center;
-                background-color: rgb(58, 183, 87);
-                padding: 0.1rem 0.3rem;
-                border-radius: 5px;
-                color: white;
+                align-items: baseline;
+                gap: 4px;
 
-                p {
-                    font-weight: 600;
-                }
-
-                span {
+                .price-amount {
                     font-size: 1rem;
-                    font-weight: 500;
+                    font-weight: 600;
+                    color: #1c1c1c;
+                    letter-spacing: -0.01em;
+                }
+
+                .price-label {
+                    font-size: 0.875rem;
+                    font-weight: 400;
+                    color: #9ca3af;
                 }
             }
         }
 
-        .description {
-            @include restaurant-text-align;
-            color: gray;
-            line-height: 2.2rem;
-            padding-bottom: 1rem;
-
-            p {
-                font-size: 0.9rem;
-            }
-        }
-
-        .max-safety-banner {
+        .safety-badge {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            color: gray;
-            padding-top: 0.5rem;
-            border-top: 1px solid #8080803b;
+            gap: 8px;
+            padding-top: 12px;
+            margin-top: 4px;
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
 
-            img {
-                width: 55px;
+            .safety-icon {
+                width: 40px;
+                height: auto;
+                flex-shrink: 0;
             }
 
-            span {
-                font-size: 0.8rem;
+            .safety-text {
+                font-size: 0.8125rem;
+                font-weight: 500;
+                color: #6b7280;
+                line-height: 1.4;
+            }
+        }
+    }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+    .rectangle-card-container {
+        .image-container {
+            height: 200px;
+        }
+
+        .card-content {
+            padding: 14px 16px 16px;
+
+            .restaurant-header .restaurant-name {
+                font-size: 1.125rem;
+            }
+
+            .restaurant-info {
+                .cuisine-type {
+                    font-size: 0.875rem;
+                }
+
+                .price-info {
+                    .price-amount {
+                        font-size: 0.9375rem;
+                    }
+                }
             }
         }
     }

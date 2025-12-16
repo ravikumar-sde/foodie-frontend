@@ -4,43 +4,92 @@
     justify-content: center;
     text-align: center;
     gap: 0.5rem;
+    min-width: 180px;
+    flex-shrink: 0;
 
     .round-card {
         display: flex;
         flex-direction: column;
         position: relative;
-        text-decoration: blink;
+        text-decoration: none;
         color: rgb(28, 28, 28);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+
+        &:hover {
+            transform: translateY(-10px);
+
+            .image-container .image {
+                box-shadow: 0 12px 32px rgba(102, 126, 234, 0.35);
+                transform: scale(1.08) rotate(2deg);
+            }
+
+            .name h6 {
+                color: #ff6b35;
+                transform: scale(1.05);
+            }
+        }
 
         .image-container {
             position: relative;
             padding: 1rem;
-            overflow: hidden;
+            overflow: visible;
 
             .image {
-                height: 8.9rem;
-                width: 8.9rem;
+                height: 9.5rem;
+                width: 9.5rem;
                 position: relative;
-                box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 5px;
-                border-radius: 120px;
+                box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+                border-radius: 50%;
                 overflow: hidden;
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+                border: 3px solid #ffffff;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+                    border-radius: 50%;
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                    z-index: 1;
+                }
+
+                &:hover::before {
+                    opacity: 1;
+                }
 
                 img {
                     position: absolute;
                     top: 50%;
                     left: 50%;
                     transform: translate(-50%, -50%);
-                    width: 80%;
+                    width: 100%;
+                    height: 100%;
                     object-fit: cover;
+                    transition: all 0.3s ease;
                 }
             }
         }
 
         .name {
+            padding: 0 0.5rem;
+
             h6 {
-                font-size: 1.2rem;
-                font-weight: 500;
-                line-height: 1.2rem;
+                font-size: 1.05rem;
+                font-weight: 600;
+                line-height: 1.4rem;
+                transition: all 0.3s ease;
+                color: #333;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 180px;
             }
         }
     }

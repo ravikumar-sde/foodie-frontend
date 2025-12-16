@@ -21,22 +21,68 @@
     flex-direction: column;
     margin-top: 2rem;
     gap: 2rem;
+    padding: 0 1rem;
 
     .delivery-dineout-container {
         position: relative;
         display: flex;
-        justify-content: flext-start;
-        gap: 1rem;
+        justify-content: flex-start;
+        gap: 2rem;
+        background: #ffffff;
+        padding: 1rem;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 
         .delivery-container {
             @include header-item-alignment;
-            padding-bottom: 1rem;
-            border-bottom: 2px solid rgb(252, 38, 38);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #ff6b35 0%, #e91e63 100%);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(252, 38, 38, 0.3);
+
+            &:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 16px rgba(252, 38, 38, 0.4);
+            }
 
             .image-container {
                 border-radius: 50px;
                 overflow: hidden;
-                background: #f5f5aa;
+                background: rgba(255, 255, 255, 0.2);
+                padding: 0.3rem;
+
+                .image {
+                    @include image-height-width;
+                    filter: brightness(0) invert(1);
+                }
+            }
+
+            p {
+                font-size: 1.1rem;
+                letter-spacing: 0.05rem;
+                font-weight: 600;
+                color: #ffffff;
+            }
+        }
+
+        .dineout-container {
+            @include header-item-alignment;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            background: #f5f5f5;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background: #e8e8e8;
+                transform: translateY(-2px);
+            }
+
+            .image-container {
+                border-radius: 50px;
+                overflow: hidden;
                 padding: 0.3rem;
 
                 .image {
@@ -45,32 +91,10 @@
             }
 
             p {
-                font-size: 1.25rem;
-                letter-spacing: 0.1rem;
-                font-weight: 500;
-                color: rgb(252, 38, 38);
-            }
-        }
-
-        .dineout-container {
-            @include header-item-alignment;
-            padding-bottom: 1rem;
-
-            .image-container {
-                border-radius: 50px;
-                overflow: hidden;
-                padding: 0.5rem;
-
-                .image {
-                    @include image-height-width;
-                }
-            }
-
-            p {
-                font-size: 1.25rem;
-                letter-spacing: 0.1rem;
-                font-weight: 500;
-                color: gray;
+                font-size: 1.1rem;
+                letter-spacing: 0.05rem;
+                font-weight: 600;
+                color: #666;
             }
         }
     }
@@ -78,19 +102,38 @@
     .filter-container {
         @include header-item-alignment;
         margin-bottom: 2rem;
+        flex-wrap: wrap;
 
         .filters-list {
             @include header-item-alignment;
-            color: gray;
-            padding: 0.5rem;
-            border-radius: 0.5rem;
-            border: 1px solid #80808059;
+            color: #555;
+            padding: 0.75rem 1.25rem;
+            border-radius: 8px;
+            border: 2px solid #e0e0e0;
+            background: #ffffff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+
+            &:hover {
+                border-color: #ff6b35;
+                background: #fff5f2;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+            }
 
             span {
                 font-size: 1rem;
                 line-height: 1.25rem;
                 letter-spacing: 0.025rem;
-                opacity: 85%;
+            }
+
+            .rating {
+                background: #48c479;
+                color: white;
+                padding: 0.25rem 0.5rem;
+                border-radius: 4px;
+                font-weight: 600;
             }
         }
     }
@@ -100,6 +143,6 @@
     position: absolute;
     padding: 0.5px;
     width: 99.9%;
-    background-color: rgba(128, 128, 128, 0.192);
-   top: 22.4%;;
+    background: linear-gradient(to right, transparent, rgba(128, 128, 128, 0.2), transparent);
+    top: 22.4%;
 }

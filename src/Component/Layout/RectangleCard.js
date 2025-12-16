@@ -10,22 +10,25 @@ function RectangleCard({data}) {
         <Link to={`/restaurants/${data._id}/online-order`} className='rectangle-card-container'>
             <div className='image-container'>
                 <img src={data.gallery[randomThumnail]} alt={data.name}/>
+                <div className='rating-badge'>
+                    <span className="rating-value">3.7</span>
+                    <span className="material-symbols-outlined star-icon">star</span>
+                </div>
             </div>
-            <div className='description-container'>
-                <div className='name-and-rating'>
-                    <h4 className='name'>{data.name}</h4>
-                    <p className='rating'>
-                        <p>3.7</p>
-                        <span className="material-symbols-outlined">star_rate</span>
-                    </p>
+            <div className='card-content'>
+                <div className='restaurant-header'>
+                    <h3 className='restaurant-name'>{data.name}</h3>
                 </div>
-                <div className='description'>
-                    <p>{data.description.length > 25 ? data.description.slice(0, 25) + '...' : data.description}</p>
-                    <p className='price'><span>$25</span><span> for one</span></p>
+                <div className='restaurant-info'>
+                    <p className='cuisine-type'>{data.description.length > 35 ? data.description.slice(0, 35) + '...' : data.description}</p>
+                    <div className='price-info'>
+                        <span className='price-amount'>$25</span>
+                        <span className='price-label'>for one</span>
+                    </div>
                 </div>
-                <div className='max-safety-banner'>
-                    <img src={maxSafety} alt='max-safety'/>
-                    <span>Follows all Max Safety measures to ensure your food is safe</span>
+                <div className='safety-badge'>
+                    <img src={maxSafety} alt='max-safety' className='safety-icon'/>
+                    <span className='safety-text'>Max Safety certified</span>
                 </div>
             </div>
         </Link>
