@@ -1,4 +1,10 @@
 .restaurant-detail-wrapper {
-    max-width: 72rem;
-    margin: auto;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 24px;
+    min-height: 100vh;
+
+    @media (max-width: 768px) {
+        padding: 20px 16px;
+    }
 }

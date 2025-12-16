@@ -86,7 +86,7 @@ export default function FoodCardList() {
                     </form>
                 </div>
                 {dishes.length > 0 ? <div className='food-card-wrapper'>{renderCards}</div> : <NotFound image={noDishFound} description='No items found that match your search/filter.' />}
-            </div>}s
+            </div>}
         </>
     )
 }

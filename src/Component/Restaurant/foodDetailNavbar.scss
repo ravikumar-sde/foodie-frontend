@@ -1,40 +1,87 @@
 .food-detail-nav-container {
     display: flex;
     flex-direction: column;
-    position: relative;
-    margin-top: 2rem;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 100;
+    padding: 16px 0;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 
     .options {
         list-style: none;
         display: flex;
         align-items: center;
-        gap: 2rem;
+        gap: 40px;
+        padding: 0;
+        margin: 0;
 
         .list {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            position: relative;
 
             a {
-                text-decoration: blink;
-                color: rgb(105, 105, 105);
-                font-size: 1.5rem;
-                line-height: 2.7rem;
+                text-decoration: none;
+                color: #6b7280;
+                font-size: 1.15rem;
+                font-weight: 600;
+                padding: 12px 0;
+                transition: all 0.3s ease;
+                letter-spacing: -0.01em;
+
+                &:hover {
+                    color: #ff6b35;
+                }
             }
 
             .active {
-                color: rgb(255, 126, 139);
-                border-bottom: 2px solid rgb(255, 126, 139);
-                z-index: 100;  
+                color: #ff6b35;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    height: 3px;
+                    background: linear-gradient(135deg, #ff6b35 0%, #e91e63 100%);
+                    border-radius: 3px 3px 0 0;
+                    animation: slideIn 0.3s ease;
+                }
             }
         }
     }
 
     .divider {
-        padding: 1px;
-        background-color: rgba(105, 105, 105, 0.377);
+        height: 1px;
+        background: linear-gradient(90deg, transparent 0%, #e5e7eb 10%, #e5e7eb 90%, transparent 100%);
         position: absolute;
-        top: 95%;
+        bottom: 0;
         width: 100%;
+    }
+
+    @keyframes slideIn {
+        from {
+            transform: scaleX(0);
+        }
+        to {
+            transform: scaleX(1);
+        }
+    }
+
+    // Responsive design
+    @media (max-width: 768px) {
+        .options {
+            gap: 24px;
+
+            .list {
+                a {
+                    font-size: 1rem;
+                }
+            }
+        }
     }
 }

@@ -1,22 +1,42 @@
 .review-card-container {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    gap: 20px;
+    padding: 24px;
+    background: white;
+    border-radius: 16px;
+    border: 1px solid #f3f4f6;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+
+    &:hover {
+        border-color: #e5e7eb;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    }
 
     .follow-reviewer-container {
         display: flex;
         justify-content: space-between;
+        align-items: center;
 
         .follow-btn {
             .btn {
-                padding: 0.8rem 1rem;
-                border: 1px solid rgb(239, 79, 95);
-                border-radius: 5px;
+                padding: 10px 20px;
+                border: 2px solid #ff6b35;
+                border-radius: 10px;
                 background-color: transparent;
-                color: rgb(239, 79, 95);
-                letter-spacing: 0.01rem;
+                color: #ff6b35;
+                letter-spacing: 0.02em;
                 font-size: 1rem;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    background: #fff5f2;
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.2);
+                }
 
                 i {
                     animation: loader-movement 1s both linear infinite;
@@ -25,7 +45,14 @@
 
             .following {
                 color: white;
-                background-color: rgb(239, 79, 95);
+                background: linear-gradient(135deg, #ff6b35 0%, #e91e63 100%);
+                border-color: transparent;
+                box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+
+                &:hover {
+                    background: linear-gradient(135deg, #e91e63 0%, #ff6b35 100%);
+                    box-shadow: 0 6px 16px rgba(255, 107, 53, 0.4);
+                }
             }
         }
     }
