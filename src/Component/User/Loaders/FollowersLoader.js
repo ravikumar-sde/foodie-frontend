@@ -16,6 +16,7 @@ export default function FollowersLoader() {
                             <div className='name-loader'></div>
                             <div className='reviews-followers-loader'></div>
                         </div>
+                        <div className='button-loader'></div>
                     </div>
                     <div className='following-followers-container-loader'>
                         <div className='image-container-loader'></div>
@@ -23,6 +24,7 @@ export default function FollowersLoader() {
                             <div className='name-loader'></div>
                             <div className='reviews-followers-loader'></div>
                         </div>
+                        <div className='button-loader'></div>
                     </div>
                     <div className='following-followers-container-loader'>
                         <div className='image-container-loader'></div>
@@ -30,6 +32,7 @@ export default function FollowersLoader() {
                             <div className='name-loader'></div>
                             <div className='reviews-followers-loader'></div>
                         </div>
+                        <div className='button-loader'></div>
                     </div>
                     <div className='following-followers-container-loader'>
                         <div className='image-container-loader'></div>
@@ -37,6 +40,23 @@ export default function FollowersLoader() {
                             <div className='name-loader'></div>
                             <div className='reviews-followers-loader'></div>
                         </div>
+                        <div className='button-loader'></div>
+                    </div>
+                    <div className='following-followers-container-loader'>
+                        <div className='image-container-loader'></div>
+                        <div className='user-name-container-loader'>
+                            <div className='name-loader'></div>
+                            <div className='reviews-followers-loader'></div>
+                        </div>
+                        <div className='button-loader'></div>
+                    </div>
+                    <div className='following-followers-container-loader'>
+                        <div className='image-container-loader'></div>
+                        <div className='user-name-container-loader'>
+                            <div className='name-loader'></div>
+                            <div className='reviews-followers-loader'></div>
+                        </div>
+                        <div className='button-loader'></div>
                     </div>
                 </div>
             </div>

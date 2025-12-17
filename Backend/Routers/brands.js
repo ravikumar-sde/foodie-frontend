@@ -1,6 +1,8 @@
 const express = require("express");
 const router = new express.Router();
 const Brands = require("../Models/brands.js");
+const Dishes = require("../Models/dishes.js");
+const Reviews = require("../Models/reviews.js");
 const expError = require("../utils/expError.js");
 const catchAsyncError = require("../utils/asyncError.js");
 const { storage } = require("../Cloudinary/index");
@@ -30,7 +32,68 @@ router.get(
 
         if(req.query && req.query.query) {
             const data = req.query.query;
-            brands = await Brands.find().or([{"description": { $regex: data, $options: 'i'} }, {"name": { $regex: data, $options: 'i'} }]);
+
+            // Find restaurants matching the query
+            brands = await Brands.find().or([
+                {"description": { $regex: data, $options: 'i'} },
+                {"name": { $regex: data, $options: 'i'} }
+            ]);
+
+            // Also find restaurants that have dishes matching the query
+            const dishesMatchingQuery = await Dishes.find({
+                $or: [
+                    { name: { $regex: data, $options: 'i' } },
+                    { description: { $regex: data, $options: 'i' } }
+                ]
+            }).populate('restaurant');
+
+            // Get unique restaurant IDs from dishes
+            const restaurantIdsFromDishes = [...new Set(dishesMatchingQuery.map(dish => dish.restaurant._id.toString()))];
+
+            // Find restaurants from dishes that aren't already in brands
+            const additionalBrands = await Brands.find({
+                _id: { $in: restaurantIdsFromDishes.filter(id => !brands.some(b => b._id.toString() === id)) }
+            });
+
+            // Combine both results
+            brands = [...brands, ...additionalBrands];
+
+            // For each brand, calculate rating and get matching dishes
+            const brandsWithDetails = await Promise.all(brands.map(async (brand) => {
+                // Get all reviews for this restaurant
+                const reviews = await Reviews.find({ brand: brand._id });
+
+                // Calculate average rating
+                let avgRating = 0;
+                if (reviews.length > 0) {
+                    const totalRating = reviews.reduce((sum, review) => sum + review.rating, 0);
+                    avgRating = (totalRating / reviews.length).toFixed(1);
+                }
+
+                // Get matching dishes (max 3)
+                const matchingDishes = await Dishes.find({
+                    restaurant: brand._id,
+                    $or: [
+                        { name: { $regex: data, $options: 'i' } },
+                        { description: { $regex: data, $options: 'i' } }
+                    ]
+                }).limit(3);
+
+                return {
+                    ...brand.toObject(),
+                    rating: parseFloat(avgRating),
+                    reviewCount: reviews.length,
+                    matchingDishes: matchingDishes.map(dish => ({
+                        _id: dish._id,
+                        name: dish.name,
+                        price: dish.price,
+                        image: dish.image,
+                        type: dish.type
+                    }))
+                };
+            }));
+
+            brands = brandsWithDetails;
         } else {
             brands = await Brands.find({});
         }

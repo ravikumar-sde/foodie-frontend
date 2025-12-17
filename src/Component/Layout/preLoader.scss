@@ -60,15 +60,6 @@
         }
     }
 
-    .line {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 4px;
-        background: linear-gradient(90deg, #ff6b35 0%, #e91e63 100%);
-        animation: progressBar 2s ease-in-out infinite;
-        box-shadow: 0 2px 8px rgba(255, 107, 53, 0.4);
-    }
 }
 
 @keyframes spin {
@@ -97,17 +88,5 @@
     40% {
         transform: scale(1);
         opacity: 1;
-    }
-}
-
-@keyframes progressBar {
-    0% {
-        width: 0%;
-    }
-    50% {
-        width: 70%;
-    }
-    100% {
-        width: 100%;
     }
 }

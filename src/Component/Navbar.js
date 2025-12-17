@@ -61,7 +61,7 @@ export default function Navbar() {
     }, []);
 
     const renderSuggestions = searchSuggestion.map(suggestion => {
-        return <SearchCard data={suggestion} />
+        return <SearchCard key={suggestion._id} data={suggestion} />
     });
 
     return (

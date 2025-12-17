@@ -103,21 +103,41 @@
                 top: 120%;
                 right: -4%;
                 width: 450px;
-                max-height: 600px;
-                border-radius: 12px;
-                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+                max-height: 500px;
+                border-radius: 16px;
+                box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
                 z-index: 100;
                 overflow-y: auto;
                 overflow-x: hidden;
                 background-color: white;
-                animation: slideDown 0.3s ease;
+                border: 1px solid #e5e7eb;
+                animation: slideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+                /* Custom scrollbar */
+                &::-webkit-scrollbar {
+                    width: 6px;
+                }
+
+                &::-webkit-scrollbar-track {
+                    background: #f9fafb;
+                    border-radius: 0 16px 16px 0;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background: #d1d5db;
+                    border-radius: 10px;
+
+                    &:hover {
+                        background: #9ca3af;
+                    }
+                }
 
                 .suggestions {
                     width: 100%;
-                    padding: 1rem;
+                    padding: 8px;
                     display: flex;
                     flex-direction: column;
-                    gap: 0.5rem;
+                    gap: 4px;
                 }
             }
         }
