@@ -1,5 +1,5 @@
 import './navbar.scss';
-import zomatoLogo from '../Asset/zomato-svgrepo-com.png';
+import foodieLogo from '../Asset/foodie-logo.svg';
 import useProfile from '../Asset/user-profile.svg';
 import { useEffect, useContext, useState } from 'react';
 import { locationContext } from '../Context/locationProvider';
@@ -68,7 +68,7 @@ export default function Navbar() {
         <>
             <div className='navbar-container'>
                 <div className='logo-container'>
-                    <Link to='/'><img src={zomatoLogo} alt='zomato' /></Link>
+                    <Link to='/'><img src={foodieLogo} alt='Foodie' /></Link>
                 </div>
                 <div className='location-search-box-container'>
                     <div className='location-container'>

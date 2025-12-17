@@ -1,0 +1,26 @@
+<svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fork Icon -->
+  <g transform="translate(5, 10)">
+    <rect x="8" y="0" width="2" height="8" fill="#FF6B35" rx="1"/>
+    <rect x="12" y="0" width="2" height="8" fill="#FF6B35" rx="1"/>
+    <rect x="16" y="0" width="2" height="8" fill="#FF6B35" rx="1"/>
+    <rect x="8" y="8" width="10" height="2" fill="#FF6B35" rx="1"/>
+    <rect x="12" y="10" width="2" height="30" fill="#FF6B35" rx="1"/>
+  </g>
+  
+  <!-- Spoon Icon -->
+  <g transform="translate(25, 10)">
+    <ellipse cx="5" cy="5" rx="5" ry="7" fill="#E91E63"/>
+    <rect x="4" y="12" width="2" height="28" fill="#E91E63" rx="1"/>
+  </g>
+  
+  <!-- Text: FOODIE -->
+  <text x="50" y="38" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#2D3748">
+    FOODIE
+  </text>
+  
+  <!-- Decorative element - small circle accent -->
+  <circle cx="185" cy="25" r="3" fill="#FF6B35"/>
+  <circle cx="192" cy="30" r="2" fill="#E91E63"/>
+</svg>
+
