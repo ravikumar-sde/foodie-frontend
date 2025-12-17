@@ -72,10 +72,17 @@ export default function EditProfile() {
 
     return (
         <div className={editProfileForm}>
+            <div className='overlay' onClick={handleFormVisibility}></div>
             <div className='edit-profile-container'>
-                <div className='close-btn'>
-                    <i className='bx bx-x' onClick={handleFormVisibility}></i>
+                <button className='close-btn' onClick={handleFormVisibility}>
+                    <i className='bx bx-x'></i>
+                </button>
+
+                <div className='modal-header'>
+                    <h2>Edit Profile</h2>
+                    <p>Update your profile information and photo</p>
                 </div>
+
                 <div className='image-container'>
                     <div className='image'>
                         {isLoading ? <div className='img-overlay'><i className='bx bx-loader-alt loader'></i></div> : <div className='img-overlay'><i className='bx bxs-camera-plus' onClick={handleIsOpenToggling}></i></div>}
@@ -97,11 +104,19 @@ export default function EditProfile() {
                         <input id='number' name='phone' type='number' value={input.phone} onChange={handleOnChangeProfileInfo} />
                     </div>
                     <div className='list btn-container'>
-                        {isLoading ? <button className='btn'><i className='bx bx-loader-alt loader'></i></button> : <button className='btn' type='submit' onClick={updateFormData}>Update</button>}
+                        {isLoading ? (
+                            <button className='btn' disabled>
+                                <i className='bx bx-loader-alt'></i>
+                                <span>Updating...</span>
+                            </button>
+                        ) : (
+                            <button className='btn' type='submit' onClick={updateFormData}>
+                                <span>Update Profile</span>
+                            </button>
+                        )}
                     </div>
                 </form>
             </div>
-            <div className='overlay'></div>
         </div >
     )
 }

@@ -64,13 +64,23 @@ router.post(
     })
 );
 
-//GET request for finding users
+//GET request for finding current user (must come before /users)
 router.get(
     "/users/me",
     auth,
     catchAsyncError(async (req, res) => {
         const me = await req.user.populate('following');
         res.status(200).send(me);
+    })
+);
+
+//GET request for finding all users
+router.get(
+    "/users",
+    auth,
+    catchAsyncError(async (req, res) => {
+        const users = await Users.find({}).populate('followers').populate('following');
+        res.status(200).send(users);
     })
 );
 

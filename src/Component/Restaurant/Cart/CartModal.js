@@ -12,17 +12,21 @@ export default function CartModal({ isOpen, onClose }) {
     const [address, setAddress] = useState('');
     const [couponCode, setCouponCode] = useState('');
     const [appliedCoupon, setAppliedCoupon] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
+    const [isCheckingOut, setIsCheckingOut] = useState(false);
 
     useEffect(() => {
         if (isOpen) {
+            setIsLoading(true);
             (async () => {
                 const dishList = await fetchData(`/restaurants/${id}/dishes`);
                 const { brand } = await fetchData(`/restaurants/${id}`);
                 dishList?.dishes && setDishes([...dishList.dishes]);
                 setRestaurant(brand);
+                setIsLoading(false);
             })();
         }
-        //eslint-disable-next-line 
+        //eslint-disable-next-line
     }, [id, isOpen]);
 
     const cartItems = dishes.filter(dish => cart[dish._id]);
@@ -57,7 +61,7 @@ export default function CartModal({ isOpen, onClose }) {
         setCouponCode('');
     };
 
-    const handleCheckout = () => {
+    const handleCheckout = async () => {
         if (!address.trim()) {
             alert('Please enter delivery address');
             return;
@@ -66,6 +70,12 @@ export default function CartModal({ isOpen, onClose }) {
             alert('Your cart is empty');
             return;
         }
+
+        setIsCheckingOut(true);
+        // Simulate API call
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        setIsCheckingOut(false);
+
         alert('Order placed successfully!');
         onClose();
     };
@@ -76,8 +86,15 @@ export default function CartModal({ isOpen, onClose }) {
         <>
             <div className="cart-modal-overlay" onClick={onClose}></div>
             <div className="cart-modal">
-                <div className="cart-modal-header">
-                    <div className="header-content">
+                {isLoading ? (
+                    <div className="cart-modal-loader">
+                        <div className="loader-spinner"></div>
+                        <p>Loading your cart...</p>
+                    </div>
+                ) : (
+                    <>
+                        <div className="cart-modal-header">
+                            <div className="header-content">
                         <h1>Your Cart</h1>
                         {restaurant && <p className="restaurant-name">{restaurant.name}</p>}
                     </div>
@@ -237,12 +254,27 @@ export default function CartModal({ isOpen, onClose }) {
                         </div>
 
                         {/* Checkout Button */}
-                        <button className="checkout-btn" onClick={handleCheckout}>
-                            <span>Proceed to Checkout</span>
-                            <i className='bx bx-right-arrow-alt'></i>
+                        <button
+                            className="checkout-btn"
+                            onClick={handleCheckout}
+                            disabled={isCheckingOut}
+                        >
+                            {isCheckingOut ? (
+                                <>
+                                    <i className='bx bx-loader-alt loader'></i>
+                                    <span>Processing...</span>
+                                </>
+                            ) : (
+                                <>
+                                    <span>Proceed to Checkout</span>
+                                    <i className='bx bx-right-arrow-alt'></i>
+                                </>
+                            )}
                         </button>
                     </div>
                 </div>
+                </>
+                )}
             </div>
         </>
     );

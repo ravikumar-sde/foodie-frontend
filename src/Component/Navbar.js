@@ -95,22 +95,49 @@ export default function Navbar() {
                 </div>
                 }
                 {!user.error && <div className='profile-container'>
-                    <div className='image-container'>
+                    <div className='image-container' onClick={handleProfileOptions}>
                         <img src={profilePicture || useProfile} alt='profile' />
                     </div>
-                    <p className='name'>{user.fullname.slice(0, 4)}</p>
                     {isProfileOptions && <i className='bx bx-chevron-up' onClick={handleProfileOptions}></i>}
                     {!isProfileOptions && <i className='bx bx-chevron-down' onClick={handleProfileOptions}></i>}
                     {isProfileOptions && <div className='toggle-profile-options'>
                         <ul className='options'>
-                            <li className='list' onClick={handleProfileOptions}><Link to={`/profile/${user._id}/reviews`}>Profile</Link></li>
-                            <li className='list' onClick={handleProfileOptions}><Link to={`/profile/${user._id}/bookmarks`}>Bookmarks</Link></li>
-                            <li className='list' onClick={handleProfileOptions}><Link to={`/profile/${user._id}/reviews`}>Reviews</Link></li>
-                            <li className='list' onClick={handleProfileOptions}><Link to={`/profile/${user._id}/followers`}>Network</Link></li>
-                            <li className='list' onClick={handleProfileOptions}><Link to={`/profile/${user._id}/followers`}>Find Friends</Link></li>
-                            <li className='list' onClick={handleProfileOptions}><Link to={`/profile/${user._id}/settings`}>Settings</Link></li>
+                            <li onClick={handleProfileOptions}>
+                                <Link to={`/profile/${user._id}/reviews`}>
+                                    <i className='bx bx-user'></i>
+                                    <span>Profile</span>
+                                </Link>
+                            </li>
+                            <li onClick={handleProfileOptions}>
+                                <Link to={`/profile/${user._id}/bookmarks`}>
+                                    <i className='bx bx-bookmark'></i>
+                                    <span>Bookmarks</span>
+                                </Link>
+                            </li>
+                            <li onClick={handleProfileOptions}>
+                                <Link to={`/profile/${user._id}/reviews`}>
+                                    <i className='bx bx-star'></i>
+                                    <span>Reviews</span>
+                                </Link>
+                            </li>
+                            <li onClick={handleProfileOptions}>
+                                <Link to={`/profile/${user._id}/followers`}>
+                                    <i className='bx bx-group'></i>
+                                    <span>Network</span>
+                                </Link>
+                            </li>
+                            <li onClick={handleProfileOptions}>
+                                <Link to='/find-friends'>
+                                    <i className='bx bx-user-plus'></i>
+                                    <span>Find Friends</span>
+                                </Link>
+                            </li>
+                            <div className='divider'></div>
                             <Form action='/logout' method='post' className='list'>
-                                <button>Log out</button>
+                                <button>
+                                    <i className='bx bx-log-out'></i>
+                                    <span>Log out</span>
+                                </button>
                             </Form>
                         </ul>
                     </div>}

@@ -19,8 +19,15 @@
     .heading-loader {
         width: 300px;
         height: 35px;
-        background-color: rgb(181 181 181 / 37% );
-        animation: pre-loader 1s forwards linear infinite;
+        border-radius: 8px;
+        background: linear-gradient(
+            90deg,
+            #f3f4f6 0%,
+            #e5e7eb 50%,
+            #f3f4f6 100%
+        );
+        background-size: 200% 100%;
+        animation: shimmer 1.5s ease-in-out infinite;
     }
 
     .gallery-container {
@@ -64,13 +71,28 @@
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
         gap: 16px;
-        animation: pre-loader 1s forwards linear infinite;
 
         .image-loader {
             height: 280px;
             width: 100%;
-            background-color: rgb(181 181 181 / 37% );
             border-radius: 16px;
+            background: linear-gradient(
+                90deg,
+                #f3f4f6 0%,
+                #e5e7eb 50%,
+                #f3f4f6 100%
+            );
+            background-size: 200% 100%;
+            animation: shimmer 1.5s ease-in-out infinite;
+        }
+    }
+
+    @keyframes shimmer {
+        0% {
+            background-position: -200% 0;
+        }
+        100% {
+            background-position: 200% 0;
         }
     }
 

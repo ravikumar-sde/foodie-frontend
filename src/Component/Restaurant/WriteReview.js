@@ -60,39 +60,124 @@ export default function WriteComment() {
         }
     }
 
+    const ratingLabels = {
+        1: 'Poor',
+        2: 'Fair',
+        3: 'Good',
+        4: 'Very Good',
+        5: 'Excellent'
+    };
+
     return (
         <div className={isFormVisibile}>
-            <div className='overlay'></div>
+            <div className='overlay' onClick={handleFormVisibility}></div>
             <form className='write-review-container'>
-                <i className='bx bx-x close-btn' onClick={handleFormVisibility}></i>
-                <div className='heading-container'>
-                    <h2 className='heading'>Feedback</h2>
+                <div className='review-header'>
+                    <div className='header-content'>
+                        <i className='bx bx-edit-alt header-icon'></i>
+                        <h2 className='heading'>Write a Review</h2>
+                    </div>
+                    <button type='button' className='close-btn' onClick={handleFormVisibility}>
+                        <i className='bx bx-x'></i>
+                    </button>
                 </div>
-                <div className='rating-container'>
-                    <ul className='start-container'>
-                        {[1, 2, 3, 4, 5].map((star, index) => {
-                            return (
-                                <li className='start' key={star}><i className='bx bx-star'
-                                    onClick={() => handleStarClick(star)}
-                                    style={{
-                                        cursor: 'pointer',
-                                        color: star <= rating ? 'rgb(255, 126, 139)' : 'gray',
-                                    }}>
-                                </i></li>
-                            )
-                        })
-                        }
-                    </ul>
+
+                <div className='review-body'>
+                    <div className='rating-section'>
+                        <div className='section-header'>
+                            <i className='bx bx-star section-icon'></i>
+                            <h3>Rate your experience</h3>
+                        </div>
+                        <div className='rating-container'>
+                            <ul className='star-container'>
+                                {[1, 2, 3, 4, 5].map((star) => {
+                                    return (
+                                        <li className='star-item' key={star}>
+                                            <i
+                                                className={`bx ${star <= rating ? 'bxs-star' : 'bx-star'}`}
+                                                onClick={() => handleStarClick(star)}
+                                            ></i>
+                                        </li>
+                                    )
+                                })}
+                            </ul>
+                            {rating > 0 && (
+                                <p className='rating-label'>{ratingLabels[rating]}</p>
+                            )}
+                        </div>
+                    </div>
+
+                    <div className='comment-section'>
+                        <div className='section-header'>
+                            <i className='bx bx-message-square-detail section-icon'></i>
+                            <h3>Share your feedback</h3>
+                        </div>
+                        <textarea
+                            id='comment'
+                            className='comment-input'
+                            placeholder='Tell us about your experience... What did you like? What could be improved?'
+                            value={feedback}
+                            onChange={handleFeedbackOnChange}
+                            rows='6'
+                        ></textarea>
+                        <p className='character-count'>{feedback.length} characters</p>
+                    </div>
+
+                    <div className='upload-section'>
+                        <div className='section-header'>
+                            <i className='bx bx-image-add section-icon'></i>
+                            <h3>Add photos (optional)</h3>
+                        </div>
+                        <div className='upload-area'>
+                            <input
+                                type='file'
+                                id='file-upload'
+                                className='file-input'
+                                multiple
+                                accept='image/*'
+                                onChange={handleFileUpload}
+                            />
+                            <label htmlFor='file-upload' className='upload-label'>
+                                <i className='bx bx-cloud-upload'></i>
+                                <span className='upload-text'>
+                                    {file && file.length > 0
+                                        ? `${file.length} photo${file.length > 1 ? 's' : ''} selected`
+                                        : 'Click to upload or drag and drop'}
+                                </span>
+                                <span className='upload-hint'>PNG, JPG up to 10MB</span>
+                            </label>
+                        </div>
+                    </div>
                 </div>
-                <div className='comment-container'>
-                    <label htmlFor='comment'>Write your feedback</label>
-                    <textarea id='comment' className='comment' cols='50' rows='10' onChange={handleFeedbackOnChange}></textarea>
+
+                <div className='review-footer'>
+                    <button
+                        type='button'
+                        className='cancel-btn'
+                        onClick={handleFormVisibility}
+                        disabled={isLoading}
+                    >
+                        Cancel
+                    </button>
+                    <button
+                        type='submit'
+                        className='submit-btn'
+                        onClick={handleFormData}
+                        disabled={isLoading || rating === 0}
+                    >
+                        {isLoading ? (
+                            <>
+                                <i className='bx bx-loader-alt loader'></i>
+                                <span>Submitting...</span>
+                            </>
+                        ) : (
+                            <>
+                                <span>Submit Review</span>
+                                <i className='bx bx-send'></i>
+                            </>
+                        )}
+                    </button>
                 </div>
-                <div className='upload-photos-container'>
-                    <label htmlFor='file-upload'>Upload photos</label>
-                    <input type='file' id='file-upload' className='upload-photos' multiple onChange={handleFileUpload} />
-                </div>
-                <button type='submit' className='submit-btn' onClick={handleFormData}>{isLoading ? <i className='bx bx-loader-alt loader' ></i> : 'Submit'}</button>
             </form>
         </div>
     )

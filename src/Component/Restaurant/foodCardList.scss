@@ -61,9 +61,15 @@
             .heading-loader {
                 height: 35px;
                 width: 250px;
-                border-radius: 5px;
-                background-color: rgb(181 181 181 / 37%);
-                animation: pre-loader 1s forwards linear infinite;
+                border-radius: 8px;
+                background: linear-gradient(
+                    90deg,
+                    #f3f4f6 0%,
+                    #e5e7eb 50%,
+                    #f3f4f6 100%
+                );
+                background-size: 200% 100%;
+                animation: shimmer 1.5s ease-in-out infinite;
             }
 
             .track-order-loader {
@@ -72,9 +78,15 @@
                 gap: 0.5rem;
                 height: 25px;
                 width: 150px;
-                background-color: rgb(181 181 181 / 37%);
-                border-radius: 5px;
-                animation: pre-loader 1s forwards linear infinite;
+                background: linear-gradient(
+                    90deg,
+                    #f3f4f6 0%,
+                    #e5e7eb 50%,
+                    #f3f4f6 100%
+                );
+                background-size: 200% 100%;
+                border-radius: 8px;
+                animation: shimmer 1.5s ease-in-out infinite;
             }
         }
 
@@ -138,9 +150,15 @@
         .search-restaurant-food-loader {
             height: 35px;
             width: 250px;
-            border-radius: 0.4rem;
-            background-color: rgb(181 181 181 / 37%);
-            animation: pre-loader 1s forwards linear infinite;
+            border-radius: 8px;
+            background: linear-gradient(
+                90deg,
+                #f3f4f6 0%,
+                #e5e7eb 50%,
+                #f3f4f6 100%
+            );
+            background-size: 200% 100%;
+            animation: shimmer 1.5s ease-in-out infinite;
         }
     }
 
@@ -156,7 +174,6 @@
         display: flex;
         flex-direction: column;
         gap: 3rem;
-        animation: pre-loader 1s linear forwards infinite;
 
         .food-card-container {
             display: flex;
@@ -166,7 +183,15 @@
                 .image-loader {
                     width: 150px;
                     height: 150px;
-                    background-color: rgb(181 181 181 / 37%);
+                    border-radius: 12px;
+                    background: linear-gradient(
+                        90deg,
+                        #f3f4f6 0%,
+                        #e5e7eb 50%,
+                        #f3f4f6 100%
+                    );
+                    background-size: 200% 100%;
+                    animation: shimmer 1.5s ease-in-out infinite;
                 }
             }
 
@@ -179,13 +204,29 @@
                     max-width: 40rem;
                     width: 40rem;
                     height: 2.5rem;
-                    background-color: rgb(181 181 181 / 37%);
+                    border-radius: 8px;
+                    background: linear-gradient(
+                        90deg,
+                        #f3f4f6 0%,
+                        #e5e7eb 50%,
+                        #f3f4f6 100%
+                    );
+                    background-size: 200% 100%;
+                    animation: shimmer 1.5s ease-in-out infinite;
                 }
 
                 .food-price-loader {
                     width: 8rem;
                     height: 2rem;
-                    background-color: rgb(181 181 181 / 37%);
+                    border-radius: 8px;
+                    background: linear-gradient(
+                        90deg,
+                        #f3f4f6 0%,
+                        #e5e7eb 50%,
+                        #f3f4f6 100%
+                    );
+                    background-size: 200% 100%;
+                    animation: shimmer 1.5s ease-in-out infinite;
                 }
 
                 .food-description-loader {
@@ -193,9 +234,26 @@
                     max-width: 39rem;
                     width: 30rem;
                     height: 3rem;
-                    background-color: rgb(181 181 181 / 37%);
+                    border-radius: 8px;
+                    background: linear-gradient(
+                        90deg,
+                        #f3f4f6 0%,
+                        #e5e7eb 50%,
+                        #f3f4f6 100%
+                    );
+                    background-size: 200% 100%;
+                    animation: shimmer 1.5s ease-in-out infinite;
                 }
             }
         }
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
     }
 }

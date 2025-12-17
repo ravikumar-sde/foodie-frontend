@@ -22,7 +22,15 @@
             .heading-loader {
                 width: 300px;
                 height: 35px;
-                background-color: rgb(181 181 181 / 37%);
+                border-radius: 8px;
+                background: linear-gradient(
+                    90deg,
+                    #f3f4f6 0%,
+                    #e5e7eb 50%,
+                    #f3f4f6 100%
+                );
+                background-size: 200% 100%;
+                animation: shimmer 1.5s ease-in-out infinite;
             }
         }
 
@@ -59,11 +67,10 @@
     .list-container {
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 12px;
     }
 
     .list-container-loader {
-        animation: pre-loader 1s linear forwards infinite;
         display: flex;
         flex-direction: column;
         gap: 2rem;
@@ -80,8 +87,15 @@
                 .image-container-loader {
                     height: 50px;
                     width: 50px;
-                    border-radius: 50px;
-                    background-color: rgb(181 181 181 / 37%);
+                    border-radius: 50%;
+                    background: linear-gradient(
+                        90deg,
+                        #f3f4f6 0%,
+                        #e5e7eb 50%,
+                        #f3f4f6 100%
+                    );
+                    background-size: 200% 100%;
+                    animation: shimmer 1.5s ease-in-out infinite;
                 }
 
                 .user-name-container-loader {
@@ -95,8 +109,15 @@
 
                     .name-loader {
                         padding: 8px 150px;
-                        background-color: rgb(181 181 181 / 37%);
-                        border-radius: 5px;
+                        border-radius: 8px;
+                        background: linear-gradient(
+                            90deg,
+                            #f3f4f6 0%,
+                            #e5e7eb 50%,
+                            #f3f4f6 100%
+                        );
+                        background-size: 200% 100%;
+                        animation: shimmer 1.5s ease-in-out infinite;
                     }
 
                     .reviews-followers-loader {
@@ -105,8 +126,15 @@
 
                         p {
                             padding: 5px 60px;
-                            background-color: rgb(181 181 181 / 37%);
-                            border-radius: 5px;
+                            border-radius: 8px;
+                            background: linear-gradient(
+                                90deg,
+                                #f3f4f6 0%,
+                                #e5e7eb 50%,
+                                #f3f4f6 100%
+                            );
+                            background-size: 200% 100%;
+                            animation: shimmer 1.5s ease-in-out infinite;
                         }
                     }
                 }
@@ -129,26 +157,56 @@
                         gap: 0.1rem;
                         padding: 0.1rem 0.3rem;
                         border-radius: 8px;
-                        background-color: rgb(181 181 181 / 37%);
+                        background: linear-gradient(
+                            90deg,
+                            #f3f4f6 0%,
+                            #e5e7eb 50%,
+                            #f3f4f6 100%
+                        );
+                        background-size: 200% 100%;
+                        animation: shimmer 1.5s ease-in-out infinite;
                     }
 
                     .delivery-loader {
                         padding: 10px 20px;
-                        background-color: rgb(181 181 181 / 37%);
+                        border-radius: 8px;
+                        background: linear-gradient(
+                            90deg,
+                            #f3f4f6 0%,
+                            #e5e7eb 50%,
+                            #f3f4f6 100%
+                        );
+                        background-size: 200% 100%;
+                        animation: shimmer 1.5s ease-in-out infinite;
                     }
 
                     .created-at-container-loader {
                         margin-left: 0.5rem;
                         padding: 10px 20px;
-                        border-radius: 5px;
-                        background-color: rgb(181 181 181 / 37%);
+                        border-radius: 8px;
+                        background: linear-gradient(
+                            90deg,
+                            #f3f4f6 0%,
+                            #e5e7eb 50%,
+                            #f3f4f6 100%
+                        );
+                        background-size: 200% 100%;
+                        animation: shimmer 1.5s ease-in-out infinite;
                     }
                 }
 
                 .comment-container-loader {
                     width: 275px;
                     height: 30px;
-                    background-color: rgb(181 181 181 / 37%);
+                    border-radius: 8px;
+                    background: linear-gradient(
+                        90deg,
+                        #f3f4f6 0%,
+                        #e5e7eb 50%,
+                        #f3f4f6 100%
+                    );
+                    background-size: 200% 100%;
+                    animation: shimmer 1.5s ease-in-out infinite;
                 }
 
                 .photos-container-loader {
@@ -159,11 +217,27 @@
                     .photos-loader {
                         width: 275px;
                         height: 150px;
-                        border-radius: 5px;
-                        background-color: rgb(181 181 181 / 37%);
+                        border-radius: 12px;
+                        background: linear-gradient(
+                            90deg,
+                            #f3f4f6 0%,
+                            #e5e7eb 50%,
+                            #f3f4f6 100%
+                        );
+                        background-size: 200% 100%;
+                        animation: shimmer 1.5s ease-in-out infinite;
                     }
                 }
             }
+        }
+    }
+
+    @keyframes shimmer {
+        0% {
+            background-position: -200% 0;
+        }
+        100% {
+            background-position: 200% 0;
         }
     }
 }

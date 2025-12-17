@@ -6,6 +6,7 @@ import Restaurant, { loader as restaurantLoader } from './Pages/Restaurant';
 import RestaurantDetail, { loader as restaurantDetailLoader, action as addToBookmarkAction } from './Pages/RestaurantDetail';
 import Profile, { loader as profilePictureLoader } from './Pages/Profile';
 import UserProfile, { loader as userPorfilePictureLoader, action as FollowUnFollowAction } from './Pages/UserProfile';
+import FindFriends, { loader as findFriendsLoader } from './Pages/FindFriends';
 import LocationProvider from './Context/locationProvider';
 import ReviewProvider from './Context/reviewProvider';
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
@@ -142,6 +143,13 @@ const router = createBrowserRouter([
             action: RemoveFollowingAction,
           },
         ]
+      },
+      {
+        path: '/find-friends',
+        element: (<FormProvider>
+          <FindFriends />
+        </FormProvider>),
+        loader: findFriendsLoader,
       }
     ],
   },

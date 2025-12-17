@@ -1,0 +1,139 @@
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+@mixin shimmer-effect {
+    background: linear-gradient(
+        90deg,
+        #f3f4f6 0%,
+        #e5e7eb 50%,
+        #f3f4f6 100%
+    );
+    background-size: 1000px 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.find-friends-loader-wrapper {
+    min-height: calc(100vh - 80px);
+    background: linear-gradient(to bottom, #f9fafb 0%, #ffffff 100%);
+    padding: 40px 0;
+
+    .find-friends-loader-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+
+        .header-section-loader {
+            margin-bottom: 32px;
+
+            .heading-loader {
+                width: 300px;
+                height: 40px;
+                border-radius: 8px;
+                margin-bottom: 12px;
+                @include shimmer-effect;
+            }
+
+            .subheading-loader {
+                width: 250px;
+                height: 24px;
+                border-radius: 6px;
+                margin-bottom: 24px;
+                @include shimmer-effect;
+            }
+
+            .search-loader {
+                max-width: 500px;
+                height: 50px;
+                border-radius: 12px;
+                @include shimmer-effect;
+            }
+        }
+
+        .stats-loader {
+            height: 60px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            @include shimmer-effect;
+        }
+
+        .users-grid-loader {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 16px;
+
+            .user-card-loader {
+                background: white;
+                border: 1px solid #e5e7eb;
+                border-radius: 12px;
+                padding: 20px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+
+                .avatar-loader {
+                    width: 42px;
+                    height: 42px;
+                    border-radius: 50%;
+                    flex-shrink: 0;
+                    @include shimmer-effect;
+                }
+
+                .user-info-loader {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+
+                    .name-loader {
+                        width: 60%;
+                        height: 20px;
+                        border-radius: 4px;
+                        @include shimmer-effect;
+                    }
+
+                    .meta-loader {
+                        width: 40%;
+                        height: 16px;
+                        border-radius: 4px;
+                        @include shimmer-effect;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding: 24px 0;
+
+        .find-friends-loader-container {
+            padding: 0 16px;
+
+            .header-section-loader {
+                .heading-loader {
+                    width: 200px;
+                    height: 32px;
+                }
+
+                .subheading-loader {
+                    width: 180px;
+                }
+            }
+
+            .users-grid-loader {
+                grid-template-columns: 1fr;
+                gap: 12px;
+
+                .user-card-loader {
+                    padding: 16px;
+                }
+            }
+        }
+    }
+}
+

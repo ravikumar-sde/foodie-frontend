@@ -20,7 +20,6 @@
         display: flex;
         gap: 0.5rem;
         flex-wrap: wrap;
-        animation: pre-loader 1s forwards linear infinite;
 
         .bookmark-card-loader {
             display: flex;
@@ -31,20 +30,53 @@
             .image-loader {
                 width: 240px;
                 height: 170px;
-                background-color: rgb(181 181 181 / 37%);
+                border-radius: 12px;
+                background: linear-gradient(
+                    90deg,
+                    #f3f4f6 0%,
+                    #e5e7eb 50%,
+                    #f3f4f6 100%
+                );
+                background-size: 200% 100%;
+                animation: shimmer 1.5s ease-in-out infinite;
             }
 
             .name-container-loader {
                 width: 175px;
                 height: 20px;
-                background-color: rgb(181 181 181 / 37%);
+                border-radius: 8px;
+                background: linear-gradient(
+                    90deg,
+                    #f3f4f6 0%,
+                    #e5e7eb 50%,
+                    #f3f4f6 100%
+                );
+                background-size: 200% 100%;
+                animation: shimmer 1.5s ease-in-out infinite;
             }
 
             .location-container-loader {
                 width: 125px;
                 height: 10px;
-                background-color: rgb(181 181 181 / 37%);
+                border-radius: 8px;
+                background: linear-gradient(
+                    90deg,
+                    #f3f4f6 0%,
+                    #e5e7eb 50%,
+                    #f3f4f6 100%
+                );
+                background-size: 200% 100%;
+                animation: shimmer 1.5s ease-in-out infinite;
             }
+        }
+    }
+
+    @keyframes shimmer {
+        0% {
+            background-position: -200% 0;
+        }
+        100% {
+            background-position: 200% 0;
         }
     }
 }

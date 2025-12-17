@@ -1,14 +1,24 @@
 .following-followers-container {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 12px;
+    flex: 1;
+    min-width: 0;
 
     .image-container {
-        height: 50px;
-        width: 50px;
+        height: 42px;
+        width: 42px;
         overflow: hidden;
         position: relative;
-        border-radius: 50px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        border: 2px solid #f3f4f6;
+        transition: all 0.2s ease;
+
+        &:hover {
+            border-color: #ff6b35;
+            transform: scale(1.05);
+        }
 
         img {
             position: absolute;
@@ -21,43 +31,98 @@
     .user-name-container {
         display: flex;
         flex-direction: column;
-        gap: 0.3rem;
-        text-decoration: blink;
-        color: rgb(28, 28, 28);
-        padding-right: 5rem;
+        gap: 4px;
+        text-decoration: none;
+        color: #1f2937;
+        flex: 1;
+        min-width: 0;
+        transition: all 0.2s ease;
+
+        &:hover {
+            .name h2 {
+                color: #ff6b35;
+            }
+        }
 
         .name {
-            h2{
-                font-size: 1.1rem;
-                font-weight: 500;
-                letter-spacing: 0.01rem;
-                color: rgb(28, 28, 28);
+            h2 {
+                font-size: 0.95rem;
+                font-weight: 600;
+                letter-spacing: -0.01em;
+                color: #1f2937;
+                margin: 0;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                transition: color 0.2s ease;
             }
         }
 
         .reviews-followers {
             display: flex;
-            gap: 0.5rem;
-            
+            gap: 8px;
+            align-items: center;
+
             p {
-                font-size: 0.8rem;
-                color: rgb(105, 105, 105);
+                font-size: 0.75rem;
+                color: #6b7280;
                 text-transform: capitalize;
-                letter-spacing: 0.05rem;
+                letter-spacing: 0.01em;
                 font-weight: 500;
+                margin: 0;
+                white-space: nowrap;
+
+                &:not(:last-child)::after {
+                    content: '•';
+                    margin-left: 8px;
+                    color: #d1d5db;
+                }
             }
         }
     }
 
     .remove-add-following-btn {
+        flex-shrink: 0;
+
         button {
-            border-radius: 5px;
+            border-radius: 8px;
             background-color: transparent;
             border: none;
+            cursor: pointer;
+            padding: 4px;
+            transition: all 0.2s ease;
+
+            &:hover {
+                background-color: #f9fafb;
+            }
 
             i {
-                font-size: 2.2rem;
-                color: rgb(105, 105, 105);
+                font-size: 1.5rem;
+                color: #6b7280;
+                transition: color 0.2s ease;
+            }
+
+            &:hover i {
+                color: #ff6b35;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        gap: 10px;
+
+        .image-container {
+            height: 38px;
+            width: 38px;
+        }
+
+        .user-name-container {
+            .name h2 {
+                font-size: 0.9rem;
+            }
+
+            .reviews-followers p {
+                font-size: 0.7rem;
             }
         }
     }

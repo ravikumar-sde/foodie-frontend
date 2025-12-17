@@ -1,41 +1,44 @@
 .review-card-container {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    padding: 24px;
+    gap: 14px;
+    padding: 18px 20px;
     background: white;
-    border-radius: 16px;
-    border: 1px solid #f3f4f6;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    transition: all 0.3s ease;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    transition: all 0.2s ease;
 
     &:hover {
-        border-color: #e5e7eb;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        border-color: #d1d5db;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
     }
 
     .follow-reviewer-container {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
+        gap: 12px;
 
         .follow-btn {
+            flex-shrink: 0;
+
             .btn {
-                padding: 10px 20px;
-                border: 2px solid #ff6b35;
-                border-radius: 10px;
+                padding: 6px 16px;
+                border: 1.5px solid #ff6b35;
+                border-radius: 8px;
                 background-color: transparent;
                 color: #ff6b35;
-                letter-spacing: 0.02em;
-                font-size: 1rem;
+                letter-spacing: 0.01em;
+                font-size: 0.875rem;
                 font-weight: 600;
                 cursor: pointer;
-                transition: all 0.3s ease;
+                transition: all 0.2s ease;
+                white-space: nowrap;
 
                 &:hover {
                     background: #fff5f2;
-                    transform: translateY(-2px);
-                    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.2);
+                    transform: translateY(-1px);
+                    box-shadow: 0 2px 8px rgba(255, 107, 53, 0.15);
                 }
 
                 i {
@@ -47,13 +50,18 @@
                 color: white;
                 background: linear-gradient(135deg, #ff6b35 0%, #e91e63 100%);
                 border-color: transparent;
-                box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+                box-shadow: 0 2px 8px rgba(255, 107, 53, 0.25);
 
                 &:hover {
                     background: linear-gradient(135deg, #e91e63 0%, #ff6b35 100%);
-                    box-shadow: 0 6px 16px rgba(255, 107, 53, 0.4);
+                    box-shadow: 0 3px 10px rgba(255, 107, 53, 0.3);
                 }
             }
         }
+    }
+
+    @media (max-width: 768px) {
+        padding: 16px;
+        gap: 12px;
     }
 }

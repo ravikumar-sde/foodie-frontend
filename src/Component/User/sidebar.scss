@@ -1,36 +1,65 @@
 .profile-sidebar-wrapper {
     width: 100%;
-    border: 1px solid #8080800f;
-    border-radius: 10px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    &:hover {
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    }
 
     .heading-container {
-        padding: 1rem;
-        padding-bottom: 0.5rem;
+        padding: 1.5rem 1.25rem 1rem;
+        background: linear-gradient(135deg, rgba(255, 107, 53, 0.05) 0%, rgba(233, 30, 99, 0.05) 100%);
+        border-bottom: 2px solid #f3f4f6;
 
         .heading {
             text-transform: uppercase;
-            letter-spacing: 0.2rem;
-            font-size: 1.25rem;
-            color: rgb(130, 130, 130);
+            letter-spacing: 0.15em;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #6b7280;
         }
     }
 
     .list-container {
         display: flex;
         flex-direction: column;
-        padding-bottom: 1rem;
+        padding: 0.5rem;
 
         a {
-            text-decoration: blink;
-            color: rgb(54, 54, 54);
-            font-size: 1.2rem;
-            padding: 0.5rem 1rem;
-            font-weight: 300;
+            text-decoration: none;
+            color: #374151;
+            font-size: 1.05rem;
+            padding: 0.85rem 1rem;
+            font-weight: 500;
+            border-radius: 10px;
+            margin-bottom: 4px;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            &:hover {
+                background: linear-gradient(135deg, rgba(255, 107, 53, 0.08) 0%, rgba(233, 30, 99, 0.08) 100%);
+                color: #ff6b35;
+                transform: translateX(4px);
+            }
         }
 
         .active {
-            background-image: linear-gradient(to right, rgba(255, 0, 0, 0), rgb(235 153 153 / 40%));
-            border-left: 3px solid rgb(255, 126, 139);
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(233, 30, 99, 0.1) 100%);
+            border-left: 4px solid #ff6b35;
+            color: #ff6b35;
+            font-weight: 700;
+            box-shadow: 0 2px 8px rgba(255, 107, 53, 0.15);
+
+            &:hover {
+                transform: translateX(0);
+            }
         }
     }
 }

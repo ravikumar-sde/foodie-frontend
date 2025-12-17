@@ -57,63 +57,99 @@
     }
 
     .pre-load-wrapper {
-        animation: pre-loader 1s forwards linear infinite;
-        
+
         .following-followers-btn-wrapper-loader {
             display: flex;
             align-items: center;
             gap: 1rem;
             margin-bottom: 2rem;
-    
+
             .following-loader,
             .followers-loader {
                 border: none;
                 padding: 1.2rem 0.8rem;
-                border-radius: 5px;
+                border-radius: 8px;
                 font-size: 0.9rem;
                 letter-spacing: 0.05rem;
-                background-color: rgb(181 181 181 / 37%);
                 width: 100px;
+                background: linear-gradient(
+                    90deg,
+                    #f3f4f6 0%,
+                    #e5e7eb 50%,
+                    #f3f4f6 100%
+                );
+                background-size: 200% 100%;
+                animation: shimmer 1.5s ease-in-out infinite;
             }
         }
-    
+
         .list-container-loader {
             display: flex;
             gap: 1.5rem;
             flex-wrap: wrap;
-    
+
             .following-followers-container-loader {
                 display: flex;
                 gap: 0.5rem;
                 align-items: center;
-    
+
                 .image-container-loader {
                     width: 55px;
                     height: 55px;
-                    border-radius: 50px;
-                    background-color: rgb(181 181 181 / 37%);
+                    border-radius: 50%;
+                    background: linear-gradient(
+                        90deg,
+                        #f3f4f6 0%,
+                        #e5e7eb 50%,
+                        #f3f4f6 100%
+                    );
+                    background-size: 200% 100%;
+                    animation: shimmer 1.5s ease-in-out infinite;
                 }
-    
+
                 .user-name-container-loader {
                     display: flex;
                     flex-direction: column;
                     gap: 1rem;
-    
+
                     .name-loader {
                         width: 200px;
                         height: 20px;
-                        background-color: rgb(181 181 181 / 37%);
-                        border-radius: 5px;
+                        border-radius: 8px;
+                        background: linear-gradient(
+                            90deg,
+                            #f3f4f6 0%,
+                            #e5e7eb 50%,
+                            #f3f4f6 100%
+                        );
+                        background-size: 200% 100%;
+                        animation: shimmer 1.5s ease-in-out infinite;
                     }
-    
+
                     .reviews-followers-loader {
                         width: 100px;
                         height: 10px;
-                        background-color: rgb(181 181 181 / 37%);
-                        border-radius: 5px;
+                        border-radius: 8px;
+                        background: linear-gradient(
+                            90deg,
+                            #f3f4f6 0%,
+                            #e5e7eb 50%,
+                            #f3f4f6 100%
+                        );
+                        background-size: 200% 100%;
+                        animation: shimmer 1.5s ease-in-out infinite;
                     }
                 }
             }
+        }
+    }
+
+    @keyframes shimmer {
+        0% {
+            background-position: -200% 0;
+        }
+        100% {
+            background-position: 200% 0;
         }
     }
 }
