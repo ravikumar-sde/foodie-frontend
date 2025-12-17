@@ -14,7 +14,7 @@ export default defineConfig({
     open: true,
   },
   build: {
-    outDir: 'build',
+    outDir: 'dist',
   },
   esbuild: {
     loader: 'jsx',
