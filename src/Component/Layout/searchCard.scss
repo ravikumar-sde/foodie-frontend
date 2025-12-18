@@ -278,3 +278,92 @@
         margin: 0 auto;
     }
 }
+
+// Responsive Design
+@media (max-width: 480px) {
+    .search-card-container {
+        gap: 10px;
+        padding: 10px 12px;
+
+        .image-container {
+            .image {
+                width: 48px;
+                height: 48px;
+            }
+        }
+
+        .about-search-container {
+            .search-name {
+                .name {
+                    font-size: 0.9rem;
+                }
+            }
+
+            .search-meta {
+                font-size: 0.75rem;
+                gap: 6px;
+
+                .rating-container {
+                    padding: 2px 6px;
+
+                    .rating {
+                        font-size: 0.75rem;
+                    }
+
+                    .review-count {
+                        font-size: 0.7rem;
+                    }
+                }
+            }
+        }
+
+        .arrow-icon {
+            font-size: 1rem;
+        }
+    }
+
+    .matching-dishes-container {
+        padding: 6px 12px 10px 12px;
+
+        .dishes-list {
+            .dish-item {
+                gap: 8px;
+                padding: 6px 8px;
+
+                .dish-image {
+                    width: 36px;
+                    height: 36px;
+                }
+
+                .dish-info {
+                    .dish-name-type {
+                        .dish-name {
+                            font-size: 0.8rem;
+                        }
+                    }
+
+                    .dish-price {
+                        font-size: 0.8rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .not-found-data {
+        padding: 20px 16px;
+
+        .heading {
+            font-size: 1.1rem;
+
+            &::before {
+                font-size: 2rem;
+                margin-bottom: 8px;
+            }
+        }
+
+        .message {
+            font-size: 0.85rem;
+        }
+    }
+}

@@ -374,3 +374,168 @@
         transform: translateY(0);
     }
 }
+
+// Responsive Design
+@media (max-width: 1024px) {
+    .navbar-container {
+        padding: 1rem 1.5rem;
+        gap: 1rem;
+
+        .location-search-box-container {
+            gap: 1rem;
+            padding: 0.5rem 1rem;
+
+            .search-box-container {
+                .search {
+                    width: 16rem;
+                }
+            }
+        }
+
+        .login-signup-container {
+            margin-left: 2rem;
+        }
+
+        .profile-container {
+            margin-left: 2rem;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-wrap: wrap;
+        padding: 1rem;
+        gap: 0.75rem;
+
+        .logo-container {
+            img {
+                width: 8rem;
+            }
+        }
+
+        .location-search-box-container {
+            order: 3;
+            width: 100%;
+            flex-direction: column;
+            gap: 0.75rem;
+            padding: 0.75rem;
+
+            .location-container {
+                width: 100%;
+                justify-content: flex-start;
+
+                .location {
+                    font-size: 0.9rem;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    max-width: 200px;
+                }
+            }
+
+            .divider-container {
+                display: none;
+            }
+
+            .search-box-container {
+                width: 100%;
+
+                .search {
+                    width: 100%;
+                    padding: 0.875rem 0.875rem 0.875rem 2.5rem;
+                    font-size: 0.9rem;
+                }
+
+                .toggle-suggestions-wrapper {
+                    width: 100%;
+                    right: 0;
+                    left: 0;
+                }
+            }
+        }
+
+        .login-signup-container {
+            margin-left: auto;
+            gap: 0.5rem;
+
+            .btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        .profile-container {
+            margin-left: auto;
+            padding: 0.5rem 0.75rem;
+
+            .image-container {
+                height: 40px;
+                width: 40px;
+            }
+
+            p {
+                display: none;
+            }
+
+            i {
+                font-size: 1.2rem;
+            }
+
+            .toggle-profile-options {
+                right: 0;
+                width: 240px;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-container {
+        padding: 0.75rem;
+
+        .logo-container {
+            img {
+                width: 7rem;
+            }
+        }
+
+        .location-search-box-container {
+            padding: 0.5rem;
+
+            .location-container {
+                .location {
+                    max-width: 150px;
+                    font-size: 0.85rem;
+                }
+            }
+
+            .search-box-container {
+                .search {
+                    padding: 0.75rem 0.75rem 0.75rem 2.25rem;
+                    font-size: 0.85rem;
+                }
+
+                span {
+                    font-size: 1.1rem;
+                }
+            }
+        }
+
+        .login-signup-container {
+            .btn {
+                padding: 0.5rem 0.75rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        .profile-container {
+            padding: 0.4rem 0.6rem;
+
+            .image-container {
+                height: 36px;
+                width: 36px;
+            }
+        }
+    }
+}

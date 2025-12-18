@@ -165,3 +165,192 @@
         }
     }
 }
+
+// Responsive Design
+@media (max-width: 1024px) {
+    .profile-card-wrapper {
+        .profile-card-container {
+            padding: 3rem 2rem;
+            gap: 2rem;
+
+            .profile-image-name-container {
+                gap: 1.5rem;
+
+                .image-container {
+                    .image {
+                        width: 140px;
+                        height: 140px;
+                    }
+                }
+
+                .name-container {
+                    .name {
+                        font-size: 2rem;
+                    }
+
+                    .place {
+                        span {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+
+            .profile-followers-reviews-edit-container {
+                .following-followers {
+                    gap: 1.5rem;
+                    padding: 1rem 1.5rem;
+
+                    .list {
+                        padding: 0 1rem;
+
+                        .count {
+                            font-size: 1.75rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-card-wrapper {
+        border-radius: 16px;
+
+        .profile-card-container {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 2rem 1.5rem;
+            gap: 2rem;
+
+            .profile-image-name-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                width: 100%;
+                gap: 1rem;
+
+                .image-container {
+                    .image {
+                        width: 120px;
+                        height: 120px;
+                        border: 4px solid white;
+                    }
+                }
+
+                .name-container {
+                    .name {
+                        font-size: 1.75rem;
+                    }
+
+                    .place {
+                        justify-content: center;
+
+                        span {
+                            font-size: 0.95rem;
+                        }
+                    }
+                }
+            }
+
+            .profile-followers-reviews-edit-container {
+                width: 100%;
+                text-align: center;
+                gap: 1.25rem;
+
+                .edit-profile {
+                    .edit {
+                        width: 100%;
+                        justify-content: center;
+                        padding: 0.75rem 1.5rem;
+                        font-size: 1rem;
+                    }
+                }
+
+                .following-followers {
+                    justify-content: center;
+                    gap: 1rem;
+                    padding: 1rem;
+                    flex-wrap: wrap;
+
+                    .list {
+                        padding: 0 0.75rem;
+                        min-width: 80px;
+
+                        span {
+                            font-size: 0.85rem;
+                        }
+
+                        .count {
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-card-wrapper {
+        border-radius: 12px;
+
+        .profile-card-container {
+            padding: 1.5rem 1rem;
+            gap: 1.5rem;
+
+            .profile-image-name-container {
+                .image-container {
+                    .image {
+                        width: 100px;
+                        height: 100px;
+                        border: 3px solid white;
+                    }
+                }
+
+                .name-container {
+                    .name {
+                        font-size: 1.5rem;
+                    }
+
+                    .place {
+                        span {
+                            font-size: 0.9rem;
+                        }
+                    }
+                }
+            }
+
+            .profile-followers-reviews-edit-container {
+                .edit-profile {
+                    .edit {
+                        padding: 0.65rem 1.25rem;
+                        font-size: 0.95rem;
+
+                        i {
+                            font-size: 1.1rem;
+                        }
+                    }
+                }
+
+                .following-followers {
+                    gap: 0.75rem;
+                    padding: 0.75rem;
+
+                    .list {
+                        padding: 0 0.5rem;
+
+                        span {
+                            font-size: 0.75rem;
+                        }
+
+                        .count {
+                            font-size: 1.25rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

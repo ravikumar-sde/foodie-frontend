@@ -145,7 +145,39 @@
     @media (max-width: 768px) {
         gap: 10px;
 
+        .rating-container {
+            gap: 8px;
+
+            .rating {
+                padding: 4px 8px;
+
+                span {
+                    font-size: 0.875rem;
+                }
+
+                i {
+                    font-size: 0.8rem;
+                }
+            }
+
+            .delivery {
+                padding: 3px 8px;
+
+                p {
+                    font-size: 0.65rem;
+                }
+            }
+
+            .created-at-container {
+                p {
+                    font-size: 0.8rem;
+                }
+            }
+        }
+
         .photos-container {
+            gap: 6px;
+
             .photos {
                 width: 120px;
                 height: 85px;
@@ -155,6 +187,73 @@
         .comment-container {
             p {
                 font-size: 0.9rem;
+            }
+        }
+
+        .likes-comment-count-container {
+            padding-top: 5px;
+
+            .likes-comment-count {
+                font-size: 0.8rem;
+            }
+        }
+    }
+
+    @media (max-width: 480px) {
+        gap: 8px;
+
+        .rating-container {
+            gap: 6px;
+
+            .rating {
+                padding: 3px 7px;
+
+                span {
+                    font-size: 0.8rem;
+                }
+
+                i {
+                    font-size: 0.75rem;
+                }
+            }
+
+            .delivery {
+                padding: 2px 6px;
+
+                p {
+                    font-size: 0.6rem;
+                }
+            }
+
+            .created-at-container {
+                p {
+                    font-size: 0.75rem;
+                }
+            }
+        }
+
+        .photos-container {
+            gap: 5px;
+
+            .photos {
+                width: 100px;
+                height: 70px;
+                border-radius: 6px;
+            }
+        }
+
+        .comment-container {
+            p {
+                font-size: 0.85rem;
+                line-height: 1.4;
+            }
+        }
+
+        .likes-comment-count-container {
+            padding-top: 4px;
+
+            .likes-comment-count {
+                font-size: 0.75rem;
             }
         }
     }

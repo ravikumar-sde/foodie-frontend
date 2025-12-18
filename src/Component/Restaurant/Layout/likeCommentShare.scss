@@ -170,6 +170,7 @@
     @media (max-width: 768px) {
         .like-comment-share-detail {
             gap: 4px;
+            padding: 8px 0;
 
             .like-container,
             .comment-container,
@@ -187,10 +188,120 @@
         }
 
         .comment-wrapper {
+            gap: 10px;
+            padding: 10px 0;
+
+            .comment-box-container {
+                input {
+                    font-size: 0.9rem;
+                    padding: 9px 38px 9px 11px;
+                }
+
+                i {
+                    font-size: 1.2rem;
+                    right: 11px;
+                }
+            }
+
             .comment-list-container {
+                gap: 10px;
+
                 .comment-list {
+                    gap: 7px;
+                    padding: 9px;
+
                     .comment-details {
                         padding-left: 48px;
+
+                        p {
+                            font-size: 0.85rem;
+                        }
+
+                        .edit-comment {
+                            font-size: 0.85rem;
+                            padding: 7px 9px;
+                        }
+
+                        .edit-delete {
+                            gap: 10px;
+                            margin-top: 5px;
+
+                            span {
+                                font-size: 0.75rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 480px) {
+        .like-comment-share-detail {
+            gap: 3px;
+            padding: 7px 0;
+
+            .like-container,
+            .comment-container,
+            .share-container {
+                padding: 5px 6px;
+                gap: 4px;
+
+                span {
+                    font-size: 0.75rem;
+                }
+
+                i {
+                    font-size: 0.95rem;
+                }
+            }
+        }
+
+        .comment-wrapper {
+            gap: 8px;
+            padding: 8px 0;
+
+            .comment-box-container {
+                input {
+                    font-size: 0.85rem;
+                    padding: 8px 36px 8px 10px;
+                }
+
+                i {
+                    font-size: 1.1rem;
+                    right: 10px;
+                }
+            }
+
+            .comment-list-container {
+                gap: 8px;
+
+                .comment-list {
+                    gap: 6px;
+                    padding: 8px;
+                    border-radius: 6px;
+
+                    .comment-details {
+                        padding-left: 40px;
+
+                        p {
+                            font-size: 0.8rem;
+                            line-height: 1.4;
+                        }
+
+                        .edit-comment {
+                            font-size: 0.8rem;
+                            padding: 6px 8px;
+                        }
+
+                        .edit-delete {
+                            gap: 8px;
+                            margin-top: 4px;
+
+                            span {
+                                font-size: 0.7rem;
+                            }
+                        }
                     }
                 }
             }

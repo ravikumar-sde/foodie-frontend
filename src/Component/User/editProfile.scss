@@ -350,3 +350,167 @@
         transform: rotate(360deg);
     }
 }
+
+// Responsive Design
+@media (max-width: 768px) {
+    .edit-profile-wrapper {
+        .edit-profile-container {
+            padding: 2rem 1.5rem;
+            width: 95%;
+            max-height: 95vh;
+
+            .close-btn {
+                top: 15px;
+                right: 15px;
+                width: 36px;
+                height: 36px;
+
+                i {
+                    font-size: 1.75rem;
+                }
+            }
+
+            .modal-header {
+                h2 {
+                    font-size: 1.75rem;
+                }
+
+                p {
+                    font-size: 0.95rem;
+                }
+            }
+
+            .image-container {
+                .image {
+                    width: 140px;
+                    height: 140px;
+                    border: 4px solid #f3f4f6;
+
+                    .img-overlay {
+                        i {
+                            font-size: 2rem;
+                            padding: 0.85rem;
+                        }
+                    }
+                }
+
+                .edit-delete-profile-picture-container {
+                    flex-direction: column;
+                    width: 100%;
+
+                    .btn {
+                        width: 100%;
+                        justify-content: center;
+                    }
+                }
+            }
+
+            .details-container {
+                gap: 1.5rem;
+
+                .list {
+                    label {
+                        font-size: 0.9rem;
+                    }
+
+                    input {
+                        padding: 0.75rem 0.875rem;
+                        font-size: 1rem;
+                    }
+
+                    &.btn-container {
+                        button {
+                            padding: 0.875rem 1.25rem;
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .edit-profile-wrapper {
+        .edit-profile-container {
+            padding: 1.5rem 1rem;
+            border-radius: 16px;
+
+            .close-btn {
+                top: 12px;
+                right: 12px;
+                width: 32px;
+                height: 32px;
+
+                i {
+                    font-size: 1.5rem;
+                }
+            }
+
+            .modal-header {
+                margin-bottom: 0.75rem;
+
+                h2 {
+                    font-size: 1.5rem;
+                }
+
+                p {
+                    font-size: 0.9rem;
+                }
+            }
+
+            .alert-error {
+                padding: 0.875rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .image-container {
+                .image {
+                    width: 120px;
+                    height: 120px;
+                    border: 3px solid #f3f4f6;
+
+                    .img-overlay {
+                        i {
+                            font-size: 1.75rem;
+                            padding: 0.75rem;
+                        }
+                    }
+                }
+
+                .edit-delete-profile-picture-container {
+                    .btn {
+                        padding: 0.6rem 1rem;
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+
+            .details-container {
+                gap: 1.25rem;
+
+                .list {
+                    label {
+                        font-size: 0.85rem;
+                    }
+
+                    input {
+                        padding: 0.7rem 0.8rem;
+                        font-size: 0.95rem;
+                    }
+
+                    &.btn-container {
+                        button {
+                            padding: 0.8rem 1rem;
+                            font-size: 0.95rem;
+
+                            i {
+                                font-size: 1.25rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

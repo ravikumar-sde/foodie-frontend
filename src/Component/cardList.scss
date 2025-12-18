@@ -151,3 +151,65 @@
         transform: translateY(0);
     }
 }
+
+// Responsive Design
+@media (max-width: 768px) {
+    .wrapper {
+        padding: 1.5rem 0.5rem;
+
+        .container {
+            padding: 1rem 0.5rem;
+            gap: 1rem;
+
+            .list-container {
+                gap: 1.5rem;
+                padding: 1rem 0.25rem;
+            }
+
+            .btn {
+                display: none; // Hide navigation buttons on mobile, rely on touch scrolling
+            }
+
+            .heading {
+                margin-left: 0.5rem;
+
+                h2 {
+                    font-size: 1.5rem;
+                }
+
+                &::after {
+                    width: 60px;
+                    height: 3px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .wrapper {
+        padding: 1rem 0.25rem;
+
+        .container {
+            padding: 0.75rem 0.25rem;
+
+            .list-container {
+                gap: 1rem;
+                padding: 0.75rem 0.25rem;
+            }
+
+            .heading {
+                margin-left: 0.25rem;
+
+                h2 {
+                    font-size: 1.25rem;
+                }
+
+                &::after {
+                    width: 50px;
+                    height: 2px;
+                }
+            }
+        }
+    }
+}

@@ -146,3 +146,110 @@
     background: linear-gradient(to right, transparent, rgba(128, 128, 128, 0.2), transparent);
     top: 22.4%;
 }
+
+// Responsive Design
+@media (max-width: 768px) {
+    .header-container {
+        margin-top: 1rem;
+        gap: 1.5rem;
+        padding: 0 0.75rem;
+
+        .delivery-dineout-container {
+            gap: 1rem;
+            padding: 0.75rem;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            .delivery-container,
+            .dineout-container {
+                padding: 0.6rem 1.25rem;
+                flex: 1;
+                min-width: 140px;
+                justify-content: center;
+
+                .image-container {
+                    .image {
+                        width: 24px;
+                        height: 20px;
+                    }
+                }
+
+                p {
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        .filter-container {
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            justify-content: flex-start;
+
+            .filters-list {
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+
+                span {
+                    font-size: 0.9rem;
+                }
+
+                .rating {
+                    padding: 0.2rem 0.4rem;
+                    font-size: 0.85rem;
+                }
+            }
+        }
+    }
+
+    .header-divider {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-container {
+        gap: 1rem;
+        padding: 0 0.5rem;
+
+        .delivery-dineout-container {
+            gap: 0.75rem;
+            padding: 0.5rem;
+
+            .delivery-container,
+            .dineout-container {
+                padding: 0.5rem 1rem;
+                min-width: 120px;
+
+                .image-container {
+                    .image {
+                        width: 20px;
+                        height: 18px;
+                    }
+                }
+
+                p {
+                    font-size: 0.9rem;
+                }
+            }
+        }
+
+        .filter-container {
+            gap: 0.4rem;
+            margin-bottom: 1rem;
+
+            .filters-list {
+                padding: 0.5rem 0.85rem;
+                font-size: 0.85rem;
+
+                span {
+                    font-size: 0.85rem;
+                }
+
+                .rating {
+                    padding: 0.15rem 0.35rem;
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+}

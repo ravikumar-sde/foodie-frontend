@@ -63,5 +63,33 @@
     @media (max-width: 768px) {
         padding: 16px;
         gap: 12px;
+
+        .follow-reviewer-container {
+            gap: 10px;
+
+            .follow-btn {
+                .btn {
+                    padding: 5px 14px;
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 480px) {
+        padding: 12px;
+        gap: 10px;
+        border-radius: 10px;
+
+        .follow-reviewer-container {
+            gap: 8px;
+
+            .follow-btn {
+                .btn {
+                    padding: 4px 12px;
+                    font-size: 0.75rem;
+                }
+            }
+        }
     }
 }

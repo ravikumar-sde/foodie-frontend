@@ -184,4 +184,54 @@
             }
         }
     }
+
+    @media (max-width: 480px) {
+        gap: 10px;
+        padding: 12px;
+        border-radius: 10px;
+
+        .image-container {
+            height: 44px;
+            width: 44px;
+            border-width: 2px;
+        }
+
+        .user-name-container {
+            gap: 3px;
+
+            .name h2 {
+                font-size: 0.9rem;
+            }
+
+            .reviews-followers {
+                gap: 6px;
+                flex-wrap: wrap;
+
+                p {
+                    font-size: 0.7rem;
+
+                    &::before {
+                        width: 2.5px;
+                        height: 2.5px;
+                    }
+
+                    &:not(:last-child)::after {
+                        margin-left: 6px;
+                    }
+                }
+            }
+        }
+
+        .remove-add-following-btn {
+            button {
+                width: 32px;
+                height: 32px;
+                border-radius: 8px;
+
+                i {
+                    font-size: 1.1rem;
+                }
+            }
+        }
+    }
 }
